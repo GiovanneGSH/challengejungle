@@ -1,0 +1,45 @@
+{
+  "name": "jungle-wagering-service",
+  "version": "1.0.0",
+  "module": "src/main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/main.ts",
+    "dev": "bun run --hot src/main.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "migration:up": "mikro-orm migration:up"
+  },
+  "mikro-orm": {
+    "configPaths": [
+      "./src/infra/database/mikro-orm.config.ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "bun-types": "^1.4.4",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.1156.0",
+    "@mikro-orm/core": "^7.2.5",
+    "@mikro-orm/migrations": "^7.2.5",
+    "@mikro-orm/nestjs": "^7.1.0",
+    "@mikro-orm/postgresql": "^7.2.5",
+    "@nestjs/common": "^12.2.0",
+    "@nestjs/core": "^12.2.0",
+    "@nestjs/platform-express": "^12.2.0",
+    "@nestjs/schedule": "^12.0.2",
+    "decimal.js": "^10.6.0",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
+}
